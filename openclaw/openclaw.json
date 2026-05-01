@@ -1,0 +1,105 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.11"
+  },
+  "wizard": {
+    "lastRunVersion": "2026.3.11",
+    "lastRunMode": "local"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "custom-mydamoxing-cn": {
+        "baseUrl": "https://mydamoxing.cn",
+        "apiKey": "sk-Kb5LlPIzffrjxFc2or5pWx0FM2Wxj37yEpKaintmuDuI9IWm",
+        "api": "anthropic-messages",
+        "models": [
+          {
+            "id": "MiniMax-M2.5-highspeed",
+            "name": "MiniMax-M2.5-highspeed (Custom Provider)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 100000,
+            "maxTokens": 8192
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "custom-mydamoxing-cn/MiniMax-M2.5-highspeed"
+      },
+      "models": {
+        "custom-mydamoxing-cn/MiniMax-M2.5-highspeed": {
+          "alias": "minimax"
+        }
+      },
+      "workspace": "C:\\Users\\Administrator\\.openclaw\\workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 2
+    }
+  },
+  "tools": {
+    "profile": "full"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "open",
+      "botToken": "8320119001:AAG5EgCpxeqRbTf2Lb3-LS3KK9hXeFVxIxE",
+      "allowFrom": [
+        "*"
+      ],
+      "groupPolicy": "allowlist",
+      "streaming": "off"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "5d87f17af6a4429d648648f7befbe45978b1765dcd14dfa3"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  },
+  "browser": {
+    "headless": false,
+    "noSandbox": true,
+    "executablePath": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "profiles": {
+      "chrome": {
+        "cdpPort": 9222,
+        "color": "#00AA00"
+      }
+    }
+  }
+}
