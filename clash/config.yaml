@@ -1,0 +1,29 @@
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+
+proxies:
+  - name: "HK"
+    type: vmess
+    server: planb.mojcn.com
+    port: 16632
+    uuid: e9071989-2bcf-4c29-9b27-f4328a84e4aa
+    alterId: 0
+    cipher: auto
+    network: ws
+    ws-opts:
+      path: /
+      headers:
+        Host: 50ac9d1bf161460554412874f6a5933d.mobgslb.tbcache.com
+    tls: false
+
+proxy-groups:
+  - name: "PROXY"
+    type: select
+    proxies:
+      - HK
+
+rules:
+  - DOMAIN-SUFFIX,binance.com,PROXY
+  - MATCH,DIRECT
